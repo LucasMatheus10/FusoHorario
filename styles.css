@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    background-image: url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /*caso não caiba na linha, quebra na próxima*/
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(24, 61, 61);
+    padding: 20px;
+    margin-bottom: 10px;
+    color: aliceblue;
+    height: auto;
+    z-index: 1; /*para sobrepor a navbar sobre a imagem*/
+}
+
+.titulo{
+    font-size: 30px;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    align-items: center; /*alinha verticalmente*/
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px; /*espaçamento entre os itens*/
+    margin-right: 50px;
+}   
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+a:hover{
+    cursor: pointer;
+    color: rgb(238, 229, 165);
+}
+
+.nav-item{
+    font-size: 20px;
+}
+
+.content{
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search{
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.input{
+    height: 5vh;
+    width: 100vh;
+    max-width: 600px;
+    margin-right: 20px;
+    border-radius: 7px;
+    text-align: center;
+    background: rgb(59, 59, 59);
+    color: aliceblue;
+    outline: none;
+    font-size: 17px;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.button{
+    border-radius: 7px;
+    width: 30vh;
+    height: 5vh;
+    max-width: 100px;
+    cursor: pointer;
+    background: rgb(59, 59, 59);
+    color: aliceblue;
+    outline: none;
+    opacity: 0.8;
+}
+
+.relogio{
+    width: 50vh;
+    height: 20vh;
+    opacity: 0.8;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 7px;
+    background: rgb(59, 59, 59);
+    display: flex;
+    flex-direction: row;
+}
+
+.relogio span{
+    display: flex;
+    background: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    width: 15vh;
+    border-radius: 7px;
+}
+
+.horas, .minutos, .segundos{
+    flex-direction: column;
+    font-size: 45px;
+}
+
+span p{
+    font-size: 10px;
+}
