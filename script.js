@@ -34,7 +34,7 @@ function formatZeroPrefix(value) { // verifica se o elemento é menor que 10, ca
 }
 
 async function buscaInput(input, timezone) {
-    const data = await fetch(`http://api.timezonedb.com/v2.1/get-time-zone?key=${key}&format=json&by=zone&zone=${timezone}`).then(response => response.json());
+    const data = await fetch(`https://api.timezonedb.com/v2.1/get-time-zone?key=${key}&format=json&by=zone&zone=${timezone}`).then(response => response.json());
     
     clearInterval(relogio);
 
@@ -91,7 +91,7 @@ inputElement.addEventListener('input', function () { // filtra as opções do se
 async function preencherTimezones() {
     selectElement.innerHTML = '';
 
-    const data = await fetch(`http://api.timezonedb.com/v2.1/list-time-zone?key=${key}&format=json`).then(response => response.json());
+    const data = await fetch(`https://api.timezonedb.com/v2.1/list-time-zone?key=${key}&format=json`).then(response => response.json());
 
     // pega a lista de timezones fornecida pela api, cria um elemento option e adiciona ao select
     data.zones.forEach(zone => {
