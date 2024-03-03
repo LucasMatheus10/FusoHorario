@@ -6,14 +6,10 @@
 }
 
 body{
-    background-image: url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: radial-gradient(ellipse at center, aquamarine, black);
 }
 
 .navbar{
-    position: relative;
     display: flex;
     flex-wrap: wrap; /*caso não caiba na linha, quebra na próxima*/
     justify-content: space-between;
@@ -22,8 +18,8 @@ body{
     padding: 20px;
     margin-bottom: 10px;
     color: aliceblue;
-    height: auto;
-    z-index: 1; /*para sobrepor a navbar sobre a imagem*/
+    height: 12vh;
+    z-index: 1; /*para sobrepor a navbar sobre a imagem (apesar de não ter mais, resolvi deixar pra lembrar)*/
 }
 
 .titulo{
@@ -34,10 +30,8 @@ body{
     display: flex;
     list-style: none;
     align-items: center; /*alinha verticalmente*/
-    justify-content: space-between;
-    flex-direction: row;
     gap: 20px; /*espaçamento entre os itens*/
-    margin-right: 50px;
+    margin-right: 25px;
 }   
 
 a{
@@ -51,11 +45,12 @@ a:hover{
 }
 
 .nav-item{
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .content{
-    height: 75vh;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,45 +58,68 @@ a:hover{
 }
 
 .search{
+    width: 100%;
+    height: auto;
     display: flex;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.selectInput{
+    width: 70%;
+    height: 20vh;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .input{
     height: 5vh;
-    width: 100vh;
-    max-width: 600px;
-    margin-right: 20px;
+    width: 100%;
     border-radius: 7px;
     text-align: center;
     background: rgb(59, 59, 59);
     color: aliceblue;
-    outline: none;
     font-size: 17px;
     padding: 20px;
     opacity: 0.8;
 }
 
+.timezone-select{
+    margin-top: 10px;
+    padding: 5px;
+    opacity: 0.8;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
 .button{
     border-radius: 7px;
-    width: 30vh;
-    height: 5vh;
-    max-width: 100px;
+    width: auto;
+    height: auto;
+    margin-left: 40px;
+    padding: 8px;
+    text-align: center;
     cursor: pointer;
     background: rgb(59, 59, 59);
     color: aliceblue;
-    outline: none;
     opacity: 0.8;
 }
 
 .relogio{
-    width: 50vh;
-    height: 20vh;
+    margin-top: 45px;
+    width: 35%;
+    height: 30vh;
     opacity: 0.8;
     padding: 10px;
     justify-content: space-around;
-    border-radius: 7px;
+    gap: 10px;
+    border-radius: 10px;
     background: rgb(59, 59, 59);
     display: flex;
     flex-direction: row;
@@ -113,8 +131,8 @@ a:hover{
     justify-content: center;
     align-items: center;
     color: aliceblue;
-    width: 15vh;
-    border-radius: 7px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .horas, .minutos, .segundos{
@@ -124,4 +142,76 @@ a:hover{
 
 span p{
     font-size: 10px;
+}
+
+/* ajuste para diferentes telas */
+
+/* smartphones */
+@media (max-width: 480px){
+    .navbar{
+        height: auto;
+        gap: 30px;
+    }
+
+    .titulo{
+        font-size: 20px;
+    }
+
+    .nav-list{
+        margin-right: 5px;
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    .nav-item{
+        font-size: 12px;
+    }
+
+    .search{
+        width: 90%;
+    }
+
+    .button{
+        margin-left: 20px;
+    }
+
+    .relogio{
+        width: auto;
+        height: 20vh;
+    }
+
+    .relogio span{
+        padding: 2px;
+    }
+}
+
+/* tablets */
+@media (min-width: 481px) and (max-width: 768px){
+    .navbar{
+        height: auto;
+    }
+
+    .titulo{
+        width: 30%;
+        font-size: 20px;
+    }
+
+    .nav-list{
+        margin-right: 10px;
+        gap: 10px;
+    }
+
+    .nav-item{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    .relogio{
+        width: 40%;
+        height: 27vh;
+    }
+
+    .button{
+        margin-left: 20px;
+    }
 }
